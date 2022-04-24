@@ -9,7 +9,7 @@
             <form action="./top.html" method="post">
                 メニュー<input><br>
                 所要時間<input><br>
-                運動強度<select name="task_level">
+                運動強度<select name="level">
                     <option value="high">高（会話が出来ないレベル）</option>
                     <option value="middle">中（息が上がるレベル）</option>
                     <option value="high">軽（息が上がらないレベル）</option>
