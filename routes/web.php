@@ -15,5 +15,10 @@ use App\Http\Controllers\UndoController;
 */
 
 Route::get('/', [AuthController::class, 'index']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/undo/list', [UndoController::class, 'list']);
+//認可処理
+Route::middleware(['auth'])->group(function () {
+    Route::get('/undo/list', [UndoController::class, 'list']);
+    Route::get('/logout', [AuthController::class, 'logout']);
+});
