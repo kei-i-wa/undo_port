@@ -20,5 +20,6 @@ Route::post('/login', [AuthController::class, 'login']);
 //認可処理
 Route::middleware(['auth'])->group(function () {
     Route::get('/undo/list', [UndoController::class, 'list']);
+    Route::post('/undo/register', [UndoController::class, 'register']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });

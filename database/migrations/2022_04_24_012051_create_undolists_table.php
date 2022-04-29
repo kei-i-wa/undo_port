@@ -19,7 +19,7 @@ class CreateUndolistsTable extends Migration
             $table->unsignedBigInteger('minutes')->comment('所要時間');
             $table->string('target', 128)->comment('目的');
             $table->text('detail')->comment('詳細');
-            $table->unsignedTinyInteger('levl')->comment('運動強度:(1:低い, 2:普通, 3:高い)');
+            $table->unsignedTinyInteger('level')->comment('運動強度:(1:低い, 2:普通, 3:高い)');
             $table->unsignedBigInteger('user_id')->comment('作成者');
             $table->foreign('user_id')->references('id')->on('users'); // 外部キー制約
             //$table->timestamps();
