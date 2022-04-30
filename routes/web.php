@@ -19,7 +19,13 @@ Route::post('/login', [AuthController::class, 'login']);
 
 //認可処理
 Route::middleware(['auth'])->group(function () {
-    Route::get('/undo/list', [UndoController::class, 'list']);
-    Route::post('/undo/register', [UndoController::class, 'register']);
+    Route::prefix('/undo')->group(function () {
+    Route::get('/list', [UndoController::class, 'list']);
+    Route::get('/list/mylist', [UndoController::class, 'mylist']);
+    Route::post('/register', [UndoController::class, 'register']);
+    Route::get('/detail/{undolist_id}', [UndoController::class, 'detail'])->whereNumber('undolist_id')->name('detail');
+    Route::delete('/delete/{undolist_id}', [UndoController::class, 'delete'])->whereNumber('undo_id')->name('delete');
+    //Route::get('/edit/{undolist_id}', [UndoController::class, 'edit'])->whereNumber('undolist_id')->name('edit');
+    });
     Route::get('/logout', [AuthController::class, 'logout']);
 });

@@ -15,10 +15,7 @@
         @endif
         @if (session('front.undo_register_success') == true)
                 <span style="color:green;">Success!</span><br>
-        @endif
-        @if (session('front.undo_delete_success') == true)
-                <span style="color:red;">Success!</span><br>
-        @endif
+            @endif
             <form action="/undo/register" method="post">
                 @csrf
                 <label>メニュー名</label><br>
@@ -53,7 +50,9 @@
             <td>{{ $undo->getLevelString() }}
             <td>{{ $undo->target }}
             <td>{{ $undo->detail }}
-            <td><a href="{{ route('detail', ['undolist_id' => $undo->id]) }}">more</a>
+            <td><a href="./detail.html">詳細閲覧</a>
+            <td><a href="./edit.html">編集</a>
+            <td><form action="./top.html"><button>完了</button></form>
         @endforeach
      </form>
         </table>
@@ -81,6 +80,6 @@
         <hr>
         <menu label="リンク">
         <a href="/logout">ログアウト</a><br>
-        <a href="/mylist">私</a><br>
+        <a href="/undo/list">みんな</a><br>
         </menu>
 @endsection

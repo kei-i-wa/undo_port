@@ -4,7 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use App\Models\Task as UndoModel;
 class UndoRegisterPostRequest extends FormRequest
+
+
 
 {
     /**
@@ -24,7 +27,7 @@ class UndoRegisterPostRequest extends FormRequest
         return 
         ['menu' => ['required', 'max:40'],
         'minutes' => ['numeric','required', 'max:3'],
-        'level' => ['required', 'numeric', Rule::in([1, 2, 3]) ],
+        'level' => ['required', 'numeric', Rule::in( array_keys(UndoModel::PRIORITY_VALUE) ) ],
         'target' => ['max:300'],
         'detail' => ['max:800'],
         ];
