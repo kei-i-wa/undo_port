@@ -28,7 +28,7 @@ class UndoController extends Controller
          $list = UndoModel::where('user_id', Auth::id())
                         ->orderBy('created_at', 'DESC')
                         ->paginate($per_page);
-        return view('undo.mylist',['list'=>$list]);
+        return view('undo.list',['list'=>$list]);
     }
     
     public function detail($undolist_id)

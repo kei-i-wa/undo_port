@@ -3,3 +3,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.body{
+  text-align: center;
+}
+
+#submit{
+  width:50%;
+}
+
+.logo{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#list{
+  margin-top: 15px;
+}
