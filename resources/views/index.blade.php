@@ -17,7 +17,8 @@
             @csrf
             email：<input name="email" value="{{ old('email') }}"><br>
             password：<input  name="password" type="password"><br>
-            <button>ログイン</button>
+            <button class="btn btn-primary mb-3">ログイン</button>
         </form>
+       
         <a href ="user/register">会員登録</a>
 @endsection
