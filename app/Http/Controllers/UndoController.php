@@ -17,14 +17,14 @@ class UndoController extends Controller
      */
     public function list()
     {
-        $per_page = 25;
+        $per_page = 10;
         $list = UndoModel::orderBy('created_at', 'DESC')
                          ->paginate($per_page);
         return view('undo.list',['list'=>$list]);
     }
     
     public function mylist(){
-        $per_page = 25;
+        $per_page = 10;
          $list = UndoModel::where('user_id', Auth::id())
                         ->orderBy('created_at', 'DESC')
                         ->paginate($per_page);
