@@ -11,7 +11,7 @@
 }
 
 #submit{
-  width:50%;
+  width:140px;
 }
 
 .logo{
@@ -25,6 +25,7 @@
 
 table{
   margin:0 auto;
+  width:100%;
 }
 table th{
   border-bottom: solid #33CCCC;
@@ -44,16 +45,13 @@ table td{
 }
 #footer-fix  #footer-fix-menu li {
   display :table-cell;
-  /*display: inline-block;*/
   background :#eee;
   padding-right: 5px;
   padding-left: 5px;
-  /*padding :0;*/
   height :35px;
-  /*position :relative;*/
   vertical-align :middle;
   border: 1px solid #ffffff;
-  font-size:13px;
+  font-size:11px;
 }
 #footer-fix  #footer-fix-menu li:hover {
   opacity :0.9;
@@ -72,9 +70,22 @@ table td{
 .form-title{
   width: 30%;
   border:none;
+  text-align: right;
 }
 
 .form-item{
   width: 70%;
   border:none;
+}
+
+@media screen and (max-width:768px) {
+  .body {
+    width:100%;
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  .bodt {
+    width:100%;
+  }
 }

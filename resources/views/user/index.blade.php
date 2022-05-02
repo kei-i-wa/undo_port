@@ -10,7 +10,7 @@
             </div>
         @endif
         @if (session('front.user_register_failure') == true)
-            <span style="color:red;">会員登録が出来ませんでした。</span><br>
+            <p style="color:red;">会員登録が出来ませんでした。</p>
         @endif
         <form action="/user/register" method="post">
             @csrf

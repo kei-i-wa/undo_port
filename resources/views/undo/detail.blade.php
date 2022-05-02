@@ -41,18 +41,28 @@
                     {{ $undo->detail }}
                 </td>
             </tr>
+            <tr>
+                <th>
+                    投稿日
+                </th>
+                 <td>
+                     {{ date('Y年m月d日',strtotime($undo->created_at)) }}
+                </td>
+            </tr>
         </table>
-        <hr>
         @if($undo->user_id === Auth::id())
-        <form action="{{ route('delete', ['undolist_id' => $undo->id]) }}" method="post">
+        <form action="{{ route('delete', ['undolist_id' => $undo->id]) }}" method="post" style="margin-top:20px;">
             @csrf
             @method("DELETE")
-            <button onclick='return confirm("削除します(削除したら戻せません)。よろしいですか？");'>削除する</button>
+            <button class="btn btn-sm mx-auto btn-danger mb-3" id="submit" onclick='return confirm("削除します(削除したら戻せません)。よろしいですか？");'>削除する</button>
         </form>
         @endif
-        
-        <menu label="リンク">
-        <a href="/undo/list">みんなの運動</a><br>
-        <a href="/logout">ログアウト</a><br>
+        <menu label="リンク" id="footer-fix">
+            <ul id="footer-fix-menu">
+                <li><a href="/logout"><i class="bi bi-door-open-fill">ログアウト</i></a></li>
+                <li><a href="/undo/mylist"><i class="bi bi-person-fill">マイページ</i></a></li>
+                <li><a href="/undo/list"><i class="bi bi-house-door">投稿一覧</i></a></li>
+                <li><a href="/undo/new"><i class="bi bi-pencil-fill">新規投稿</i></a></li>
+            </ul>
         </menu>
 @endsection

@@ -1,5 +1,4 @@
 @extends('layout')
-
 {{-- メインコンテンツ --}}
 @section('contets')
         <div class="body">
@@ -12,7 +11,7 @@
                 </div>
             @endif
             @if (session('front.user_register_success') == true)
-                <span style="color:green;">会員登録が完了しました。<br>ログインしてください。</span><br>
+                <p style="color:green;">会員登録が完了しました。<br>ログインしてください。</p>
             @endif
             <form action="/login" method="post">
                 @csrf

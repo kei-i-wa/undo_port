@@ -22,12 +22,10 @@ class UserController extends Controller
             $r = UserModel::create($datum);
              $request->session()->flash('front.user_register_success',true);
              return redirect('/');
-            
         }catch(\Throwable $e){
             echo $e->getMessage();exit;
             $request->session()->flash('front.user_register_failure', true);
             return view('user.index');
         }
-        
     }
 }

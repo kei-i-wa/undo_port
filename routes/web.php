@@ -24,6 +24,7 @@ Route::post('/user/register', [UserController::class, 'register']);
 Route::middleware(['auth'])->group(function () {
     Route::prefix('/undo')->group(function () {
     Route::get('/list', [UndoController::class, 'list']);
+    Route::get('/new', [UndoController::class, 'new']);
     Route::get('/mylist', [UndoController::class, 'mylist']);
     Route::post('/register', [UndoController::class, 'register']);
     Route::get('/detail/{undolist_id}', [UndoController::class, 'detail'])->whereNumber('undolist_id')->name('detail');

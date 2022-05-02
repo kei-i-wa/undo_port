@@ -9,21 +9,13 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    /**
-     * トップページ を表示する
-     * 
-     * @return \Illuminate\View\View
-     */
     public function index()
     {
         return view('index');
     }
     
-        public function login(LoginPostRequest $request)
+    public function login(LoginPostRequest $request)
     {
-        // validate済
-
-        // データの取得
         $datum = $request->validated();
         //認証
         if(Auth::attempt($datum)===false){
